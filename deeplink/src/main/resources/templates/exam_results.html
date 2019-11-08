@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hóa học - hoc68.com</title>
+    <link rel="icon" type="image/png" href="http://hoc68.com/wp-content/uploads/2018/01/favicon-1.png">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-lg-12 col-sm-12">
+
+            <div class="card hovercard">
+                <div class="cardheader">
+                    <div class="transbox">
+                        <h3 th:text="${examName}"></h3>
+                    </div>
+                </div>
+                <div class="avatar">
+                    <img th:alt="${fullname}" th:src="${avatar}">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a target="_blank" href="#" th:text="${fullname}"></a>
+                    </div>
+                    <div class="desc">Kết quả</div>
+                    <h2 style="color: red;" th:text="${correctNumber} + '/' + ${total}"></h2>
+                    <div class="desc" th:text="'Thời gian: ' + ${time}"></div>
+                </div>
+                <div style="text-align: start; padding: 30px;">
+                    <div th:each="question,iter : ${questionList}">
+                        <h4 th:text="'Câu: ' + ${iter.index + 1}"></h4>
+                        <p th:utext="${question.content}" style="font-size: 36px;"></p>
+                        <ul th:each="answer : ${question.answers}">
+                            <li th:utext="${answer.code} + ': ' + ${answer.content}"></li>
+                        </ul>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="bottom">
+                    <div class="row" style="margin-bottom: 20px;">
+                        <a class="btn btn-danger" th:href="${ref}">Làm ngay</a>
+                    </div>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <a href="https://itunes.apple.com/vn/app/h%C3%B3a-h%E1%BB%8Dc-hoc68-com/id1365325028?mt=8" >
+                            <img src="/images/appple-store.png">
+                        </a>
+                    </div>
+                    <div class="row" style="margin-bottom: 20px;">
+                        <a href="https://play.google.com/store/apps/details?id=com.hoc68.hoahoc">
+                            <img src="/images/google-play.png">
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+    <script src="/js/main.js" ></script>
+</body>
+</html>

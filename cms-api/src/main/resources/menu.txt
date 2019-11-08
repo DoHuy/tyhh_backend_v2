@@ -1,0 +1,240 @@
+{ "navigation": [
+    {
+        "name": "Dashboard",
+        "url": "/dashboard",
+        "icon": "icon-speedometer",
+        "badge": {
+            "variant": "info",
+            "text": "NEW"
+        }
+    },
+    {
+        "title": true,
+        "name": "Data center"
+    },
+    {
+        "name": "Đề thi",
+        "url": "/exam",
+        "children": [
+        {
+        "name": "Danh sách đề thi",
+        "url": "/exam/list",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Tạo đề thi mới",
+        "url": "/exam/create",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Đề thi nổi bật",
+        "url": "/exam/hot",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Cài đặt",
+        "url": "/exam/settings",
+        "icon": "icon-puzzle"
+        }
+        ]
+    },
+    {
+        "name": "Nội dung",
+        "url": "/app",
+        "children": [
+        {
+        "name": "Banner",
+        "url": "/app/banner",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Cài đặt",
+        "url": "/app/setting",
+        "icon": "icon-puzzle"
+        }
+        ]
+    },
+    {
+        "name": "Đa phương tiện",
+        "url": "/files",
+        "children": [
+        {
+        "name": "Hình ảnh",
+        "url": "/files/image",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Audio",
+        "url": "/files/Audio",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Tài liệu",
+        "url": "/files/documents",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Videos",
+        "url": "/files/video",
+        "icon": "icon-puzzle"
+        }
+        ]
+    },
+    {
+        "name": "Nhân sự",
+        "url": "/manager",
+        "roles": [
+            0,
+            1
+        ]
+        "children": [
+        {
+        "name": "Danh sách nhân sự",
+        "url": "/manager/list",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Lịch sử",
+        "url": "/manager/history",
+        "icon": "icon-puzzle"
+        }
+        ]
+    },
+    {
+        "name": "Thông báo",
+        "url": "/notification",
+        "children": [
+        {
+        "name": "Lịch sử thông báo",
+        "url": "/notifications/list",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Gửi thông báo",
+        "url": "/notifications/setting",
+        "icon": "icon-puzzle"
+        }
+        ]
+    },
+    {
+        "title": true,
+        "name": "UI elements"
+    },
+    {
+        "name": "Components",
+        "url": "/components",
+        "icon": "icon-puzzle",
+        "children": [
+        {
+        "name": "Buttons",
+        "url": "/components/buttons",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Social Buttons",
+        "url": "/components/social-buttons",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Cards",
+        "url": "/components/cards",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Forms",
+        "url": "/components/forms",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Modals",
+        "url": "/components/modals",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Switches",
+        "url": "/components/switches",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Tables",
+        "url": "/components/tables",
+        "icon": "icon-puzzle"
+        },
+        {
+        "name": "Tabs",
+        "url": "/components/tabs",
+        "icon": "icon-puzzle"
+        }
+        ]
+    },
+    {
+        "name": "Icons",
+        "url": "/icons",
+        "icon": "icon-star",
+        "children": [
+        {
+        "name": "Font Awesome",
+        "url": "/icons/font-awesome",
+        "icon": "icon-star",
+        "badge": {
+        "variant": "secondary",
+        "text": "4.7"
+        }
+        },
+        {
+        "name": "Simple Line Icons",
+        "url": "/icons/simple-line-icons",
+        "icon": "icon-star"
+        }
+        ]
+    },
+    {
+        "name": "Widgets",
+        "url": "/widgets",
+        "icon": "icon-calculator",
+        "badge": {
+            "variant": "info",
+            "text": "NEW"
+        }
+    },
+    {
+        "name": "Charts",
+        "url": "/charts",
+        "icon": "icon-pie-chart"
+    },
+    {
+        "divider": true
+    },
+    {
+        "title": true,
+        "name": "Extras"
+    },
+    {
+        "name": "Pages",
+        "url": "/pages",
+        "icon": "icon-star",
+        "children": [
+        {
+        "name": "Login",
+        "url": "/pages/login",
+        "icon": "icon-star"
+        },
+        {
+        "name": "Register",
+        "url": "/pages/register",
+        "icon": "icon-star"
+        },
+        {
+        "name": "Error 404",
+        "url": "/pages/404",
+        "icon": "icon-star"
+        },
+        {
+        "name": "Error 500",
+        "url": "/pages/500",
+        "icon": "icon-star"
+        }
+        ]
+    }
+]
+}

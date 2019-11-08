@@ -1,0 +1,13 @@
+package com.stadio.model.enu;
+
+public enum ActionEvent {
+
+    EXAM_ONLINE_IS_CREATED,
+    EXAM_ONLINE_IS_UPDATED,
+    EXAM_ONLINE_IS_CANCELLED,
+    EXAM_ONLINE_PUSH_REMIND,
+    EXAM_ONLINE_PUSH_RESULT,
+    EXAM_UPDATE,
+    EXAM_CREATE,
+    EXAME_DELETE
+}

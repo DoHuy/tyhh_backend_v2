@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stadio</groupId>
+    <artifactId>parent</artifactId>
+    <packaging>pom</packaging>
+    <version>${service-version}</version>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.8.RELEASE</version>
+
+    </parent>
+
+    <modules>
+        <module>model</module>
+        <module>common</module>
+        <module>notification</module>
+        <module>tasks</module>
+        <module>search-engine</module>
+        <module>cms-api</module>
+        <module>mobile-api</module>
+        <module>mediation</module>
+        <module>transaction</module>
+        <module>deeplink</module>
+        <module>model-es</module>
+        <module>euruka-server</module>
+    </modules>
+
+    <dependencyManagement>
+        <!--<dependencies>-->
+            <!--<dependency>-->
+                <!--<groupId>com.stadio</groupId>-->
+                <!--<artifactId>common</artifactId>-->
+                <!--<version>${service-version}</version>-->
+            <!--</dependency>-->
+
+            <!--<dependency>-->
+                <!--<groupId>com.stadio</groupId>-->
+                <!--<artifactId>model</artifactId>-->
+                <!--<version>${service-version}</version>-->
+            <!--</dependency>-->
+        <!--</dependencies>-->
+    </dependencyManagement>
+
+    <profiles>
+
+        <profile>
+            <id>dev-local</id>
+            <properties>
+                <active.mode>dev</active.mode>
+
+                <!-- Base IP modules use to connect to service like mongo, redis, rabitmq,... -->
+                <baseIPInteract>localhost</baseIPInteract>
+
+                <!-- Domain modules connect to when use image function like upload,... -->
+                <domainMedia>http://45.76.184.173:7785</domainMedia>
+
+                <!-- Domain which mobile-api use to send full link of request action -->
+                <domainMobile>45.76.184.173</domainMobile>
+
+                <!-- Main Bussiness Database mongodb -->
+                <mongodb.primary.host>localhost</mongodb.primary.host>
+                <mongodb.primary.port>27017</mongodb.primary.port>
+                <mongodb.primary.database>hoc68-chemistry-v1</mongodb.primary.database>
+                <mongodb.primary.username>TYHH</mongodb.primary.username>
+                <mongodb.primary.password>Stadio@123456!</mongodb.primary.password>
+
+                <!-- User Database mongodb -->
+                <mongodb.secondary.host>localhost</mongodb.secondary.host>
+                <mongodb.secondary.port>27017</mongodb.secondary.port>
+                <mongodb.secondary.database>hoc68-sso</mongodb.secondary.database>
+                <mongodb.secondary.username>hoc68-sso</mongodb.secondary.username>
+                <mongodb.secondary.password>hoc68@ssor;PS.78:</mongodb.secondary.password>
+
+            </properties>
+
+        </profile>
+
+        <profile>
+            <id>dev</id>
+            <properties>
+                <active.mode>dev</active.mode>
+                <baseIPInteract>45.76.147.88</baseIPInteract>
+                <domainMedia>http://45.76.147.88:7785</domainMedia>
+                <domainMobile>45.76.147.88</domainMobile>
+
+                <mongodb.primary.host>45.76.147.88</mongodb.primary.host>
+                <mongodb.primary.port>27017</mongodb.primary.port>
+                <mongodb.primary.database>hoc68-chemistry-v1</mongodb.primary.database>
+                <mongodb.primary.username>TYHH</mongodb.primary.username>
+                <mongodb.primary.password>Stadio@123456!</mongodb.primary.password>
+
+                <mongodb.secondary.host>45.76.147.88</mongodb.secondary.host>
+                <mongodb.secondary.port>27017</mongodb.secondary.port>
+                <mongodb.secondary.database>hoc68-sso</mongodb.secondary.database>
+                <mongodb.secondary.username>hoc68-sso</mongodb.secondary.username>
+                <mongodb.secondary.password>hoc68@ssor;PS.78:</mongodb.secondary.password>
+
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+
+        <!-- WARNING: This is parameter for production server. Please you do not edit here. -->
+        <profile>
+            <id>prod</id>
+            <properties>
+                <active.mode>prod</active.mode>
+                <baseIPInteract>localhost</baseIPInteract>
+                <is.production>1</is.production>
+                <domainMedia>http://mediation.hoc68.com</domainMedia>
+                <domainMobile>mobile-api.hoc68.com</domainMobile>
+
+                <mongodb.primary.host>localhost</mongodb.primary.host>
+                <mongodb.primary.port>27017</mongodb.primary.port>
+                <mongodb.primary.database>hoc68-chemistry-v1</mongodb.primary.database>
+                <mongodb.primary.username>TYHH</mongodb.primary.username>
+                <mongodb.primary.password>Stadio@123456!</mongodb.primary.password>
+
+                <mongodb.secondary.host>localhost</mongodb.secondary.host>
+                <mongodb.secondary.port>27017</mongodb.secondary.port>
+                <mongodb.secondary.database>hoc68-sso</mongodb.secondary.database>
+                <mongodb.secondary.username>hoc68-sso</mongodb.secondary.username>
+                <mongodb.secondary.password>hoc68@ssor;PS.78:</mongodb.secondary.password>
+
+            </properties>
+        </profile>
+
+
+        <!--<profile>-->
+            <!--<id>dev-Ly</id>-->
+            <!--<properties>-->
+                <!--<active.mode>dev-Ly</active.mode>-->
+                <!--<baseIPInteract>45.76.147.88</baseIPInteract>-->
+                <!--<domainMedia>http://45.76.147.88:7785</domainMedia>-->
+                <!--<domainMobile>45.76.147.88</domainMobile>-->
+
+                <!--<mongodb.primary.host>45.76.147.88</mongodb.primary.host>-->
+                <!--<mongodb.primary.port>27017</mongodb.primary.port>-->
+                <!--<mongodb.primary.database>hoc68-physical-v1</mongodb.primary.database>-->
+                <!--<mongodb.primary.username>hoc68-physical</mongodb.primary.username>-->
+                <!--<mongodb.primary.password>Stadio@123456!Physic</mongodb.primary.password>-->
+
+                <!--<mongodb.secondary.host>45.76.147.88</mongodb.secondary.host>-->
+                <!--<mongodb.secondary.port>27017</mongodb.secondary.port>-->
+                <!--<mongodb.secondary.database>hoc68-sso</mongodb.secondary.database>-->
+                <!--<mongodb.secondary.username>hoc68-sso</mongodb.secondary.username>-->
+                <!--<mongodb.secondary.password>hoc68@ssor;PS.78:</mongodb.secondary.password>-->
+
+            <!--</properties>-->
+        <!--</profile>-->
+        <!--<profile>-->
+            <!--<id>prod-Ly</id>-->
+            <!--<properties>-->
+                <!--<active.mode>prod-Ly</active.mode>-->
+                <!--<baseIPInteract>localhost</baseIPInteract>-->
+                <!--<is.production>1</is.production>-->
+                <!--<domainMedia>http://mediation.hoc68.com/</domainMedia>-->
+                <!--<domainMobile>physical-mobile-api.hoc68.com</domainMobile>-->
+
+                <!--<mongodb.primary.host>localhost</mongodb.primary.host>-->
+                <!--<mongodb.primary.port>27017</mongodb.primary.port>-->
+                <!--<mongodb.primary.database>hoc68-physical-v1</mongodb.primary.database>-->
+                <!--<mongodb.primary.username>hoc68-physical</mongodb.primary.username>-->
+                <!--<mongodb.primary.password>Stadio@123456!Physic</mongodb.primary.password>-->
+
+                <!--<mongodb.secondary.host>localhost</mongodb.secondary.host>-->
+                <!--<mongodb.secondary.port>27017</mongodb.secondary.port>-->
+                <!--<mongodb.secondary.database>hoc68-sso</mongodb.secondary.database>-->
+                <!--<mongodb.secondary.username>hoc68-sso</mongodb.secondary.username>-->
+                <!--<mongodb.secondary.password>hoc68@ssor;PS.78:</mongodb.secondary.password>-->
+
+            <!--</properties>-->
+        <!--</profile>-->
+
+    </profiles>
+
+    <properties>
+        <main.basedir>${basedir}/../..</main.basedir>
+        <jdk.version>1.8</jdk.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <slf4j.version>1.7.13</slf4j.version>
+        <log4j.version>2.5</log4j.version>
+        <service-version>v1.0</service-version>
+    </properties>
+</project>
